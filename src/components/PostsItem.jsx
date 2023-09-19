@@ -6,36 +6,21 @@ const PostsItem = (props) => {
   const [isShown, setIsShown] = useState(false);
 
   const showPostText = () => {
-    setIsShown(!isShown);
+    setIsShown((prev) => !prev);
   };
 
   return (
     <div className="posts">
       <div>
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={showPostText}
-          className="postsContent"
-          aria-hidden="true"
-        >
+        <div onClick={showPostText} className="postsContent" aria-hidden="true">
           <strong>
             {props.number}. {props.post.title}
           </strong>
-          <div>{props.post.body}</div>
+          <div style={{ marginTop: '4px' }}>{props.post.body}</div>
         </div>
         {isShown && (
-          <div style={{ marginTop: '10px' }}>
+          <div style={{ marginTop: '8px' }}>
             <PostText post={props.post} />
-            {/* <div style={{ display: 'flex', justifyContent: 'center' }}>
-              <MyButton
-                className="postButtons"
-                style={{ height: '40px', float: 'right' }}
-                onClick={() => props.remove(props.post)}
-                type="button"
-              >
-                Удалить
-              </MyButton>
-            </div> */}
           </div>
         )}
       </div>

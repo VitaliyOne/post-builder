@@ -16,6 +16,7 @@ const PostForm = ({ create }) => {
   };
   return (
     <form>
+      <h2 style={{ textAlign: 'center' }}>Конструктор постов</h2>
       <MyInput
         value={post.title}
         onChange={(event) => setPost({ ...post, title: event.target.value })}
@@ -34,7 +35,7 @@ const PostForm = ({ create }) => {
         type="text"
         placeholder="Текст"
       />
-      <MyButton onClick={addNewPost}>Создать статью</MyButton>
+      <MyButton onClick={addNewPost}>Создать пост</MyButton>
     </form>
   );
 };

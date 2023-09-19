@@ -1,8 +1,10 @@
-
 .App {
     width: 800px;
-    margin-top: 10px;
+    margin: 20px 0;
     font-family: 'Roboto', sans-serif;
+    padding: 15px 15px 0 15px;
+    background-color: white;
+    border-radius: 8px;
 }
 
 .posts {
@@ -16,7 +18,6 @@
   border-radius: 5px;
 }
 
-.postButtons{
-  bottom:0;
-  right:0;
+.postsContent{
+  cursor: pointer;
 }
