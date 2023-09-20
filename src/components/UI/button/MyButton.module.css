@@ -7,4 +7,10 @@
     border: 1px solid rgb(4, 79, 219);
     border-radius: 3px;
     font-family: 'Roboto', sans-serif;
+    transition: transform 200ms ease;
+}
+
+.myButton:hover{
+    color: #000;
+    transform: scale(1.05);
 }

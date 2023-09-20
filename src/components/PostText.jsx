@@ -9,7 +9,9 @@ const PostText = (props) => {
   return (
     <div>
       <div>{props.post.text}</div>
-      <div style={{ color: `rgba(0,0,0, 0.4)`, float: 'right' }}>Пост написан {time}</div>
+      <div style={{ color: `rgba(0,0,0, 0.4)`, float: 'left', marginTop: '5px' }}>
+        Пост написан {time}
+      </div>
     </div>
   );
 };

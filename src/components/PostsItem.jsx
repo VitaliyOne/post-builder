@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import MyButton from './UI/button/MyButton';
 import PostText from './PostText';
+import PostForm from './PostForm';
 
 const PostsItem = (props) => {
   const [isShown, setIsShown] = useState(false);
+  const [isShownForm, setIsShownForm] = useState(false);
 
   const showPostText = () => {
     setIsShown((prev) => !prev);
@@ -21,14 +23,13 @@ const PostsItem = (props) => {
         {isShown && (
           <div style={{ marginTop: '8px' }}>
             <PostText post={props.post} />
+            <div style={{ float: 'right' }}>
+              <MyButton onClick={() => props.remove(props.post)}>Удалить</MyButton>
+            </div>
           </div>
         )}
       </div>
-      {!isShown && (
-        <MyButton onClick={() => props.remove(props.post)} type="button">
-          Удалить
-        </MyButton>
-      )}
+      {!isShown && <MyButton onClick={() => props.remove(props.post)}>Удалить</MyButton>}
     </div>
   );
 };

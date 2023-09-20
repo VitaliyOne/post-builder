@@ -64,7 +64,7 @@ const App = () => {
       {posts.length !== 0 ? (
         <PostList remove={removePost} posts={posts} titlePosts="Список постов" />
       ) : (
-        <h1 style={{ textAlign: 'center' }}>Посты не найдены</h1>
+        <h2 style={{ textAlign: 'center' }}>Посты не найдены</h2>
       )}
     </div>
   );
