@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import MyInput from './UI/input/MyInput';
 import MyTextarea from './UI/textarea/MyTextarea';
 import MyButton from './UI/button/MyButton';
@@ -18,6 +18,22 @@ const PostForm = ({ create }) => {
     create(newPost);
     setPost({ title: '', body: '', text: '' });
   };
+
+  const getPost = () => {
+    fetch('https://api.spaceflightnewsapi.net/v3/articles?_limit=50')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        const numPost = data[Math.floor(Math.random() * 49)];
+        setPost({
+          title: numPost.newsSite,
+          body: numPost.title,
+          text: `${numPost.summary} Source: ${numPost.url}`
+        });
+      });
+  };
+
   return (
     <form>
       {isShown && (
@@ -42,9 +58,12 @@ const PostForm = ({ create }) => {
             placeholder="Текст"
           />
           <MyButton onClick={addNewPost}>Создать пост</MyButton>
-          <MyButton onClick={showСonstructor} style={{ float: 'right' }} type="button">
-            Свернуть конструктор
-          </MyButton>
+          <div style={{ float: 'right' }}>
+            <MyButton onClick={getPost} style={{ margin: '5px 5px 5px 5px' }}>
+              Cлучайный пост
+            </MyButton>
+            <MyButton onClick={showСonstructor}>Свернуть конструктор</MyButton>
+          </div>
         </div>
       )}
       {!isShown && (

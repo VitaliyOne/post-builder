@@ -11,6 +11,6 @@
 }
 
 .myButton:hover{
+    background: rgba(30, 106, 248, 0.164);;
     color: #000;
-    transform: scale(1.05);
 }
