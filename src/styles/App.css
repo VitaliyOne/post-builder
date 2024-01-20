@@ -25,3 +25,14 @@
 .buttonShowСonstructor{
   text-align: right;
 }
+
+.blockButtonsCreatePost{
+ display: grid;
+ grid-template-columns: 1fr 2fr;
+}
+
+@media (max-width: 500px) {
+  .blockButtonsCreatePost{
+    grid-template-columns: repeat(auto-fill, minmax(auto, 1fr));
+   }
+}

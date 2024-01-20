@@ -56,13 +56,18 @@ const PostForm = ({ create }) => {
             onChange={(event) => setPost({ ...post, text: event.target.value })}
             type="text"
             placeholder="Текст"
+            style={{ resize: 'vertical' }}
           />
-          <MyButton onClick={addNewPost}>Создать пост</MyButton>
-          <div style={{ float: 'right' }}>
-            <MyButton onClick={getPost} style={{ margin: '5px 5px 5px 5px' }}>
-              Cлучайный пост
-            </MyButton>
-            <MyButton onClick={showСonstructor}>Свернуть конструктор</MyButton>
+          <div className="blockButtonsCreatePost">
+            <div>
+              <MyButton onClick={addNewPost}>Создать пост</MyButton>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'right' }}>
+              <MyButton onClick={getPost} style={{ marginRight: '10px', marginLeft: '10px' }}>
+                Cлучайный пост
+              </MyButton>
+              <MyButton onClick={showСonstructor}>Свернуть конструктор</MyButton>
+            </div>
           </div>
         </div>
       )}
