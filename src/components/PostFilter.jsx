@@ -11,7 +11,6 @@ const PostFilter = (props) => {
 
   return (
     <div>
-      <hr style={{ margin: '15px 0' }} />
       <MySelect
         value={selectedSort}
         onChange={sortPosts}
