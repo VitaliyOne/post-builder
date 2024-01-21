@@ -78,6 +78,7 @@ const PostForm = ({ create }) => {
           </MyButton>
         </div>
       )}
+      <hr style={{ margin: '15px 0' }} />
     </form>
   );
 };

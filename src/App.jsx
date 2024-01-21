@@ -60,9 +60,10 @@ const App = () => {
   return (
     <div className="App">
       <PostForm create={createPost} />
+      <h2 style={{ textAlign: 'center', marginBottom: '10px' }}>Список постов</h2>
       <PostFilter remuveSortPost={sortPost} />
       {posts.length !== 0 ? (
-        <PostList remove={removePost} posts={posts} titlePosts="Список постов" />
+        <PostList remove={removePost} posts={posts} />
       ) : (
         <h2 style={{ textAlign: 'center' }}>Посты не найдены</h2>
       )}
